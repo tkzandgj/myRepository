@@ -1,0 +1,6 @@
+
+spring:
+  dubbo:
+    appname: spring-boot-starter-dubbo-provider-test
+    registry: zookeeper://120.25.198.165:2181?backup=120.25.198.165:2182,120.25.198.165:2183
+    protocol: dubbo

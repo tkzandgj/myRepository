@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+    <bean id="stuService" class="com.gome.provider.serviceImpl.StudentServiceImpl"/>
+
+    <dubbo:application name="dubbo_provider"/>
+
+    <dubbo:registry protocol="zookeeper" address="120.25.198.165:2181,120.25.198.165:2182,120.25.198.165:2183"/>
+
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <dubbo:service interface="com.gome.provider.service.StudentService" ref="stuService"/>
+
+</beans>
